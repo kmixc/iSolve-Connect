@@ -3,31 +3,32 @@ import React from 'react'
 export default function SignUp() {
     return (
         <div>
-            <div className='container p-5 mt-5 bg-secondary rounded'>
+            <div className='container p-5 mt-5 bg-iSolve text-light rounded'>
                 <form>
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="username" class="form-control" id="username" />
-                    </div>
 
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
+                        <label for="email">Email address</label>
                         <input type="email" class="form-control" id="email" aria-describedby="emailHelp" />
                         <small id="emailHelp" class="form-text">We'll never share your email with anyone else.</small>
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
+                        <label for="password">Password</label>
                         <input type="password" class="form-control" id="password" />
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Confirm Password</label>
+                        <label for="confirmPassword">Confirm Password</label>
                         <input type="password" class="form-control" id="confirmPassword" />
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">Date of Birth</label>
+                        <label for="adress">Address</label>
+                        <input type="address" class="form-control" id="adress" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="DOB">Date of Birth</label>
                         <div className='d-flex'>
                             <select class="form-control mx-1" id="month">
                                 <option>Month</option>
@@ -50,9 +51,9 @@ export default function SignUp() {
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">Occupation</label>
+                        <label for="occupation">Occupation</label>
                         <div className='d-flex'>
-                            <select class="form-control mx-1" id="month">
+                            <select class="form-control mx-1" id="occupation">
                                 <option>What is your profession?</option>
                                 <option>I am Programmer</option>
                                 <option>I am Company</option>
@@ -66,7 +67,7 @@ export default function SignUp() {
 
                     <div className='d-flex justify-content-between align-items-center'>
                         <button type="submit" class="btn btn-primary">Sign Up</button>
-                        <a className='p-2 badge badge-pill badge-dark' href="/login">Already have an account Login here.</a>
+                        <a className='p-2 btn btn-secondary' href="/login">Already have an account Login here.</a>
                     </div>
                 </form>
             </div>
