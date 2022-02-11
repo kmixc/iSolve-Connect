@@ -1,5 +1,6 @@
 import React from 'react'
 import Logo from '../logo.svg'
+
 //IMPORTS PAGES
 import Home from '../pages/Home'
 import EmployeeListings from '../pages/EmployeeListings'
@@ -7,6 +8,8 @@ import CompanyListings from '../pages/CompanyListings'
 import Profile from "../pages/Profile";
 import About from '../pages/About'
 import Examples from '../pages/Examples'
+import Login from '../pages/Login'
+import SignUp from '../pages/SignUp'
 
 import {
     BrowserRouter as Router,
@@ -29,6 +32,8 @@ export default function Navbar() {
                     <NavLink className="link" activeClassName="active-link" to='/employeelist'>Employee Listings</NavLink>
                     <NavLink className="link" activeClassName="active-link" to='/companylist'>Company Listings</NavLink>
                     <NavLink className="link" activeClassName="active-link" to='/profile'>Profile</NavLink>
+                    <NavLink className="link signup" activeClassName="active-link" to='/signup'>Sign-Up</NavLink>
+                    <NavLink className="link login" activeClassName="active-link" to='/login'>Login</NavLink>
                 </div>
             </nav>
 
@@ -36,6 +41,12 @@ export default function Navbar() {
                 <Redirect exact from="/" to="home" />
                 <Route path="/home">
                     <Home />
+                </Route>
+                <Route path="/about">
+                    <About />
+                </Route>
+                <Route path="/examples">
+                    <Examples />
                 </Route>
                 <Route path="/employeelist">
                     <EmployeeListings />
@@ -46,11 +57,11 @@ export default function Navbar() {
                 <Route path="/profile">
                     <Profile />
                 </Route>
-                <Route path="/about">
-                    <About />
+                <Route path="/signup">
+                    <SignUp />
                 </Route>
-                <Route path="/examples">
-                    <Examples />
+                <Route path="/login">
+                    <Login />
                 </Route>
             </Switch >
         </Router>

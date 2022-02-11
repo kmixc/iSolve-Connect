@@ -1,5 +1,4 @@
 import React from 'react'
-import Logo from '../logo.svg'
 import HomeHeader from '../components/HomeHeader'
 
 export default function Home() {
