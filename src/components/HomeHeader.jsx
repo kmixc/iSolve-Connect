@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../logo.svg'
+import Logo from '../img/logo.svg'
 
 export default function HomeHeader() {
     return (
