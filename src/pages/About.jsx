@@ -1,6 +1,6 @@
 import React from 'react'
 import HomeHeader from '../components/HomeHeader'
-
+import userIcon from '../img/UserIcon.png'
 
 export default function About() {
     return (
