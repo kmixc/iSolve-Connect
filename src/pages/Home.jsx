@@ -6,15 +6,13 @@ export default function Home() {
         <div className='home-page'>
             <HomeHeader></HomeHeader>
 
-            <h4>Welcome to iSolve Conect</h4>
-
             <div className='info-bar'>
-                <div className='info-box'>
-                    <p className='info-text'>About</p>
-                    <a className='info-link' href='/about'>About iSolve</a>
+                <div className='info-box ml-5'>
+                    <p className='info-text text-center'>About iSolve Connect</p>
+                    <a className='info-link' href='/about'>About</a>
                 </div>
-                <div className='info-box'>
-                    <p className='info-text'>Examples</p>
+                <div className='info-box img-2 mr-5'>
+                    <p className='info-text text-center'>Examples that iSolve Connect has brought to Companys</p>
                     <a className='info-link' href="/examples">Examples</a>
                 </div>
             </div>

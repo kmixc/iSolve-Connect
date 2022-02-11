@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
 
+.App {
+  height: 100vh;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +20,7 @@ body {
   padding: 10px;
   font-family: 'Fira Sans', sans-serif;
   align-items: center;
-  height: 70px;
+  height: 90px;
 }
 
 .nav-left {
@@ -80,6 +84,8 @@ body {
 
 .info-box {
   padding: 80px 100px;
+  height: 300px;
+  width: 30%;
   border-radius: 10px;
   background-color: #C4C4C4;
   display: flex;
@@ -96,9 +102,13 @@ body {
   padding: 5px 10px;
   text-decoration: none;
   border-radius: 20px;
-  color: #000;
-  background-color: #FFB5A7;
+  color: #fff;
+  background-color: #333333;
   transition: ease 0.5s;
+}
+
+.img-2 {
+  background-image: url();
 }
 
 .info-link:hover {
@@ -110,3 +120,25 @@ body {
   transition: ease 0.5s;
 }
 
+.signup {
+  background-color: #242424;
+  color: #F47E3E;
+}
+
+.login {
+  background-color: #242424;
+  color: #F47E3E;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-form {
+  padding: 50px;
+}
+
+.logo {
+  width: 400px;
+}

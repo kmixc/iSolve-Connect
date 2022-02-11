@@ -37,7 +37,7 @@ export default function Navbar() {
                 </div>
             </nav>
 
-            <Switch >
+            <Switch>
                 <Redirect exact from="/" to="home" />
                 <Route path="/home">
                     <Home />
@@ -63,7 +63,7 @@ export default function Navbar() {
                 <Route path="/login">
                     <Login />
                 </Route>
-            </Switch >
+            </Switch>
         </Router>
     )
 }
