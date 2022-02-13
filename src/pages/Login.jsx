@@ -3,12 +3,12 @@ import Logo from '../img/logo.svg'
 
 export default function Login() {
     return (
-        <div className='d-flex center align-items-center text-light my-5'>
+        <div className='d-flex align-items-center justify-content-center text-light my-5 login-cont'>
             <div className='logo-form'>
                 <img className='logo' src={Logo} alt="iSolve Logo" />
-                <p className='text-center'>We connect to Solve your problems.</p>
+                <p className='text-center text-dark'>We connect to Solve your problems.</p>
             </div>
-            <div className='container login-form my-5 bg-iSolve p-5 rounded'>
+            <div className='container login-form my-5 bg-iSolve p-5 m-5 rounded'>
                 <form className='form-login'>
                     <div class="form-group">
                         <label for="email">Email address</label>

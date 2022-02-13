@@ -37,7 +37,58 @@ export default function EmployeeListings() {
                             <div class="card-body d-flex flex-column justify-content-around align-items-center">
                                 <h5>NAME</h5>
                                 <h5>JOB EXPERIENCE</h5>
-                                <a className='btn-lg btn-light' href="#">Contact</a>
+                                <button className='btn-lg btn-light' data-toggle="modal" data-target="#exampleModal">Details</button>
+                            </div>
+                        </div>
+
+                        <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Employee Details</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <h3 className='text-center'>Employee Name</h3>
+                                        <div className='d-flex justify-content-around align-items-center'>
+                                            <img src={EmployeeTemplate} class="modal-img rounded-circle" alt="..." />
+                                            <div className='p-5'>
+                                                <div className='description'>
+                                                    <h3>Description</h3>
+                                                    <ul className='ml-5'>
+                                                        <li className='m-0'>4+ Years React JS</li>
+                                                        <li className='m-0'>4+ Years of CSS</li>
+                                                        <li className='m-0'>5+ Years of Django</li>
+                                                        <li className='m-0'>6+ Years of Javascript</li>
+                                                    </ul>
+                                                </div>
+                                                <div className='contact'>
+                                                    <h3>Contact</h3>
+                                                    <div className='d-flex justify-content-between ml-3'>
+                                                        <p className='m-0'>(Phone Number)</p>
+                                                        <p className='m-0'>(Email)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='categories mx-5 pt-2'>
+                                            <h5 className='text-center'><u>Categories</u></h5>
+                                            <div className='d-flex justify-content-center'>
+                                                <p className='cat-block rounded'>Employee</p>
+                                                <p className='cat-block rounded'>Advanced</p>
+                                                <p className='cat-block rounded'>Back-End</p>
+                                                <p className='cat-block rounded'>Front-End</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Contact Employee</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 

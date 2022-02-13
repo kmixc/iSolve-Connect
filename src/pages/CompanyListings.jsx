@@ -32,9 +32,62 @@ export default function CompanyListings() {
                             <img src={CompanyTemplate} class="card-img-top" alt="..." />
                             <div class="card-body d-flex justify-content-around align-items-center">
                                 <h5 class="card-title">Company Name</h5>
-                                <a className='btn btn-primary' href="#">Details</a>
+                                <button className='btn-lg btn-light' data-toggle="modal" data-target="#exampleModal">Details</button>
                             </div>
                         </div>
+                        <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Employee Details</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <h2>Company Name</h2>
+                                        <div className='d-flex justify-content-around align-items-center'>
+                                            <img src={CompanyTemplate} class="modal-img" alt="..." />
+                                            <div className='px-5'>
+                                                <div className='description'>
+                                                    <h3>Description</h3>
+                                                    <p className='ml-3 px-3'>ALLAVA is all about bringing people together and creating a
+                                                        comunity for people to connect. We specilize in comunicating
+                                                        with eachother</p>
+                                                </div>
+                                                <div className='contact'>
+                                                    <h3>Requirements</h3>
+                                                    <div className='d-flex justify-content-between ml-3'>
+                                                        <ul className='ml-4'>
+                                                            <li className='m-0'>4+ Years React JS</li>
+                                                            <li className='m-0'>4+ Years of CSS</li>
+                                                            <li className='m-0'>5+ Years of Django</li>
+                                                            <li className='m-0'>6+ Years of Javascript</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='categories mx-5 pt-3'>
+                                            <h5 className='text-center'><u>Categories</u></h5>
+                                            <div className='d-flex justify-content-center'>
+                                                <p className='cat-block rounded'>Company</p>
+                                                <p className='cat-block rounded'>Website</p>
+                                                <p className='cat-block rounded'>Advanced</p>
+                                                <p className='cat-block rounded'>Back-End</p>
+                                                <p className='cat-block rounded'>Front-End</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Contact</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

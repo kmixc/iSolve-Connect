@@ -1,13 +1,13 @@
 import React from 'react'
 import HomeHeader from '../components/HomeHeader'
-import userIcon from '../img/UserIcon.png'
+import userIcon from '../img/UserIcon-white.png'
 import Logo from '../img/logo.svg'
 
 export default function About() {
     return (
         <div>
             <HomeHeader></HomeHeader>
-            <div className='bg-dark p-4 mx-5 text-light rounded'>
+            <div className='bg-iSolve p-4 mx-5 text-light rounded'>
                 <p className='text-center'><b>Founders of iSolve</b></p>
                 <div className='d-flex'>
                     <div className='person p-2'>
@@ -44,7 +44,7 @@ export default function About() {
                 <p className='text-center mt-5'><b>We Solve your problems!</b></p>
             </div>
             <div className='about-bar text-light'>
-                <div className='about-box rounded mx-1 p-4 bg-dark'>
+                <div className='about-box rounded mx-1 p-4 bg-iSolve'>
                     <h4 className='text-center'>Our Mission:</h4>
                     <p>
                         iSolve Connect is all about connecting
@@ -55,7 +55,7 @@ export default function About() {
                     </p>
                     <img src={Logo} alt="company-logo" className='bottom-about-logo' />
                 </div>
-                <div className='about-box rounded mx-1 p-4 bg-dark'>
+                <div className='about-box rounded mx-1 p-4 bg-iSolve'>
                     <h4 className='text-center'>The Future:</h4>
                     <p>
                         In the future at iSolve Connect we are

@@ -128,9 +128,8 @@ body {
   color: #F47E3E;
 }
 
-.center {
-  display: flex;
-  flex-direction: column;
+.login-cont {
+  height: 71vh;
 }
 
 .logo-form {
@@ -178,4 +177,15 @@ body {
 
 .profile {
   height: 70vh;
+}
+
+.modal-img {
+  width: 30%;
+  height: 100%;
+}
+
+.cat-block {
+  background-color: #888888;
+  padding: 5px;
+  margin: 0 15px;
 }
