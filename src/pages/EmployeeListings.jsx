@@ -30,14 +30,72 @@ export default function EmployeeListings() {
                 </nav>
                 <div>
                     <div class="card-columns p-5">
-
-                        <div class="card bg-iSolve text-light">
-                            <h5 class="card-header text-center">PROGRAMMER EXPERIENCE</h5>
-                            <img src={EmployeeTemplate} class="card-img-top" alt="..." />
-                            <div class="card-body d-flex flex-column justify-content-around align-items-center">
-                                <h5>NAME</h5>
-                                <h5>JOB EXPERIENCE</h5>
-                                <button className='btn-lg btn-light' data-toggle="modal" data-target="#exampleModal">Details</button>
+                        <div className='row row-cols-1 row-cols-md-2 g-4'>
+                            <div className='col'>
+                                <div class="card bg-iSolve text-light">
+                                    <h5 class="card-header text-center">PROGRAMMER EXPERIENCE</h5>
+                                    <img src={EmployeeTemplate} class="card-img card-image" alt="..." />
+                                    <div class="card-body d-flex flex-column justify-content-around align-items-center">
+                                        <h5>NAME</h5>
+                                        <h5>JOB EXPERIENCE</h5>
+                                        <button className='btn-lg btn-light' data-toggle="modal" data-target="#exampleModal">Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='col'>
+                                <div class="card bg-iSolve text-light">
+                                    <h5 class="card-header text-center">PROGRAMMER EXPERIENCE</h5>
+                                    <img src={EmployeeTemplate} class="card-img card-image" alt="..." />
+                                    <div class="card-body d-flex flex-column justify-content-around align-items-center">
+                                        <h5>NAME</h5>
+                                        <h5>JOB EXPERIENCE</h5>
+                                        <button className='btn-lg btn-light' data-toggle="modal" data-target="#exampleModal">Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='col'>
+                                <div class="card bg-iSolve text-light">
+                                    <h5 class="card-header text-center">PROGRAMMER EXPERIENCE</h5>
+                                    <img src={EmployeeTemplate} class="card-img card-image" alt="..." />
+                                    <div class="card-body d-flex flex-column justify-content-around align-items-center">
+                                        <h5>NAME</h5>
+                                        <h5>JOB EXPERIENCE</h5>
+                                        <button className='btn-lg btn-light' data-toggle="modal" data-target="#exampleModal">Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='col'>
+                                <div class="card bg-iSolve text-light">
+                                    <h5 class="card-header text-center">PROGRAMMER EXPERIENCE</h5>
+                                    <img src={EmployeeTemplate} class="card-img card-image" alt="..." />
+                                    <div class="card-body d-flex flex-column justify-content-around align-items-center">
+                                        <h5>NAME</h5>
+                                        <h5>JOB EXPERIENCE</h5>
+                                        <button className='btn-lg btn-light' data-toggle="modal" data-target="#exampleModal">Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='col'>
+                                <div class="card bg-iSolve text-light">
+                                    <h5 class="card-header text-center">PROGRAMMER EXPERIENCE</h5>
+                                    <img src={EmployeeTemplate} class="card-img card-image" alt="..." />
+                                    <div class="card-body d-flex flex-column justify-content-around align-items-center">
+                                        <h5>NAME</h5>
+                                        <h5>JOB EXPERIENCE</h5>
+                                        <button className='btn-lg btn-light' data-toggle="modal" data-target="#exampleModal">Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='col'>
+                                <div class="card bg-iSolve text-light">
+                                    <h5 class="card-header text-center">PROGRAMMER EXPERIENCE</h5>
+                                    <img src={EmployeeTemplate} class="card-img card-image" alt="..." />
+                                    <div class="card-body d-flex flex-column justify-content-around align-items-center">
+                                        <h5>NAME</h5>
+                                        <h5>JOB EXPERIENCE</h5>
+                                        <button className='btn-lg btn-light' data-toggle="modal" data-target="#exampleModal">Details</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 

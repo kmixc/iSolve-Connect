@@ -27,12 +27,61 @@ export default function CompanyListings() {
                     </div>
                 </nav>
                 <div>
-                    <div class="card-columns  p-5">
-                        <div class="card bg-iSolve text-light">
-                            <img src={CompanyTemplate} class="card-img-top" alt="..." />
-                            <div class="card-body d-flex justify-content-around align-items-center">
-                                <h5 class="card-title">Company Name</h5>
-                                <button className='btn-lg btn-light' data-toggle="modal" data-target="#exampleModal">Details</button>
+                    <div class="card-columns p-5">
+                        <div className='row row-cols-1 row-cols-md-1 g-4'>
+                            <div className='col'>
+                                <div class="card bg-iSolve text-light">
+                                    <img src={CompanyTemplate} class="card-img-top" alt="..." />
+                                    <div class="card-body d-flex justify-content-around align-items-center">
+                                        <h5 class="card-title">Company Name</h5>
+                                        <button className='btn-lg btn-light' data-toggle="modal" data-target="#exampleModal">Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='col'>
+                                <div class="card bg-iSolve text-light">
+                                    <img src={CompanyTemplate} class="card-img-top" alt="..." />
+                                    <div class="card-body d-flex justify-content-around align-items-center">
+                                        <h5 class="card-title">Company Name</h5>
+                                        <button className='btn-lg btn-light' data-toggle="modal" data-target="#exampleModal">Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='col'>
+                                <div class="card bg-iSolve text-light">
+                                    <img src={CompanyTemplate} class="card-img-top" alt="..." />
+                                    <div class="card-body d-flex justify-content-around align-items-center">
+                                        <h5 class="card-title">Company Name</h5>
+                                        <button className='btn-lg btn-light' data-toggle="modal" data-target="#exampleModal">Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='col'>
+                                <div class="card bg-iSolve text-light">
+                                    <img src={CompanyTemplate} class="card-img-top" alt="..." />
+                                    <div class="card-body d-flex justify-content-around align-items-center">
+                                        <h5 class="card-title">Company Name</h5>
+                                        <button className='btn-lg btn-light' data-toggle="modal" data-target="#exampleModal">Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='col'>
+                                <div class="card bg-iSolve text-light">
+                                    <img src={CompanyTemplate} class="card-img-top" alt="..." />
+                                    <div class="card-body d-flex justify-content-around align-items-center">
+                                        <h5 class="card-title">Company Name</h5>
+                                        <button className='btn-lg btn-light' data-toggle="modal" data-target="#exampleModal">Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='col'>
+                                <div class="card bg-iSolve text-light">
+                                    <img src={CompanyTemplate} class="card-img-top" alt="..." />
+                                    <div class="card-body d-flex justify-content-around align-items-center">
+                                        <h5 class="card-title">Company Name</h5>
+                                        <button className='btn-lg btn-light' data-toggle="modal" data-target="#exampleModal">Details</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -46,7 +95,7 @@ export default function CompanyListings() {
                                     </div>
 
                                     <div class="modal-body">
-                                        <h2>Company Name</h2>
+                                        <h2 className='position-absolute'>Company Name</h2>
                                         <div className='d-flex justify-content-around align-items-center'>
                                             <img src={CompanyTemplate} class="modal-img" alt="..." />
                                             <div className='px-5'>
