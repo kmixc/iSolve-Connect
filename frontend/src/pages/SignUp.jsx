@@ -1,23 +1,45 @@
-import React from 'react'
+import React, { useState } from 'react'
 import axios from "axios";
 
 export default function SignUp() {
 
     
+        const[input, setInput] = useState({
+            email: '',
+            password: '',
+            address: '',
+            birth: '',
+            occupation: ''
+        })
+    
+
+    function handleChange(event){
+        const {name, value} = event.target;
+
+        setInput(prevInput => {
+            return {
+                ...prevInput,
+                [name]:value
+            }
+        })
+    }
 
     function handleClick(event){ 
         
-        //Function to check if backend works with frontend
-        /*
+        
         event.preventDefault();
         const newComp = {
-            name: "Facebook"
+            email: input.email,
+            password: input.password,
+            address: input.address,
+            birth: input.birth,
+            occupation: input.occupation
         }
 
         //calls the server.js http
         axios.post('http://localhost:8082/create', newComp)
         console.log('pressed!')
-        */
+        
     }
     
     return (
@@ -27,25 +49,21 @@ export default function SignUp() {
 
                     <div class="form-group">
                         <label for="email">Email address</label>
-                        <input  type="email" class="form-control" id="email" aria-describedby="emailHelp" />
+                        <input  type="email" onChange={handleChange} class="form-control" name="email" value={input.email} id="email" aria-describedby="emailHelp" />
                         <small id="emailHelp" class="form-text">We'll never share your email with anyone else.</small>
                     </div>
 
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" />
-                    </div>
-
-                    <div class="form-group">
-                        <label for="confirmPassword">Confirm Password</label>
-                        <input type="password" class="form-control" id="confirmPassword" />
+                        <input type="password" onChange={handleChange} name="password" value={input.password} class="form-control" id="password" />
                     </div>
 
                     <div class="form-group">
                         <label for="adress">Address</label>
-                        <input type="address" class="form-control" id="adress" />
+                        <input type="address" onChange={handleChange} name="address" value={input.address} class="form-control" id="adress" />
                     </div>
 
+                    {/*
                     <div class="form-group">
                         <label for="DOB">Date of Birth</label>
                         <div className='d-flex'>
@@ -68,11 +86,12 @@ export default function SignUp() {
                             <input type="email" class="form-control mx-1" placeholder='Year' id="year" />
                         </div>
                     </div>
+                        */}
 
                     <div class="form-group">
                         <label for="occupation">Occupation</label>
                         <div className='d-flex'>
-                            <select class="form-control mx-1" id="occupation">
+                            <select onChange={handleChange} name="occupation" value={input.occupation} class="form-control mx-1" id="occupation">
                                 <option>What is your profession?</option>
                                 <option>I am Programmer</option>
                                 <option>I am Company</option>

@@ -14,7 +14,7 @@ app.use(express.json())
 
 mongoose.connect('mongodb+srv://iSolve:Capstone2022@capstone.ksz4j.mongodb.net/myFirstDatabase');
 
-app.use("/",require("./router/companyRouter"))
+app.use("/",require("./router/userRouter"))
 
 
 
