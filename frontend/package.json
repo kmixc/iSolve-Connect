@@ -20,7 +20,6 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    
     "start": "concurrently \"react-scripts start\" \"cd ../ && nodemon server.js\" ",
     "build": "react-scripts build",
     "test": "react-scripts test",
