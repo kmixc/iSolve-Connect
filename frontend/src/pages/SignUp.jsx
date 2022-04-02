@@ -3,7 +3,7 @@ import axios from "axios";
 
 export default function SignUp() {
 
-    
+  
         const[input, setInput] = useState({
             email: '',
             password: '',
@@ -104,7 +104,7 @@ export default function SignUp() {
                     </div>
 
                     <div className='d-flex justify-content-between align-items-center'>
-                        <button onClick={handleClick} type="submit" class="btn btn-primary">Sign Up</button>
+                        <button onClick={handleClick} type="submit" href='/about' class="btn btn-primary">Sign Up</button>
                         <a className='p-2 btn btn-secondary' href="/login">Already have an account Login here.</a>
                     </div>
                 </form>

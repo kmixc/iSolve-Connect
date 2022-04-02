@@ -18,6 +18,8 @@ router.route("/create").post((req,res) => {
     })
 
     newComp.save();
+
+    window.location.replace("http://localhost:3000/login")
 })
 
 
