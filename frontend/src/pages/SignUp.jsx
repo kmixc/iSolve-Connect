@@ -38,9 +38,9 @@ export default function SignUp() {
         event.preventDefault();
         const newComp = {
             email: input.email,
+            name: input.name,
             password: input.password,
             address: input.address,
-            birth: input.birth,
             occupation: input.occupation
         }
 
@@ -62,6 +62,12 @@ export default function SignUp() {
                         <label for="email">Email address</label>
                         <input  type="email" onChange={handleChange} class="form-control" name="email" value={input.email} id="email" aria-describedby="emailHelp" />
                         <small id="emailHelp" class="form-text">We'll never share your email with anyone else.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input  type="name" onChange={handleChange} class="form-control" name="name" value={input.name} id="name" aria-describedby="name" />
+                        <small id="emailHelp" class="form-text">If you're a company, please input your companies name.</small>
                     </div>
 
                     <div class="form-group">
