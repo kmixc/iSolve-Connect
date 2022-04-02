@@ -1,5 +1,11 @@
 import React, { useState } from 'react'
 import axios from "axios";
+import Login from '../pages/Login'
+
+import {
+    BrowserRouter as Router,
+    useHistory,
+} from "react-router-dom";
 
 export default function SignUp() {
 
@@ -23,9 +29,11 @@ export default function SignUp() {
             }
         })
     }
+    const history = useHistory();
 
     function handleClick(event){ 
         
+        let path = `/login`
         
         event.preventDefault();
         const newComp = {
@@ -39,10 +47,13 @@ export default function SignUp() {
         //calls the server.js http
         axios.post('http://localhost:8082/create', newComp)
         console.log('pressed!')
+
+        history.push(path)
         
     }
     
     return (
+       
         <div>
             <div className='container p-5 mt-5 bg-iSolve text-light rounded'>
                 <form>
@@ -104,12 +115,14 @@ export default function SignUp() {
                     </div>
 
                     <div className='d-flex justify-content-between align-items-center'>
-                        <button onClick={handleClick} type="submit" href='/about' class="btn btn-primary">Sign Up</button>
+                        <button onClick={handleClick}  type="submit" class="btn btn-primary">Sign Up</button>
                         <a className='p-2 btn btn-secondary' href="/login">Already have an account Login here.</a>
                     </div>
                 </form>
             </div>
         </div>
+    
+        
     )
     
 }
