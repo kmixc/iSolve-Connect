@@ -1,8 +1,22 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import HomeHeader from '../components/HomeHeader'
 import EmployeeTemplate from '../img/employee-template.png'
 
 export default function EmployeeListings() {
+
+    const [users, setUsers] = useState([{
+        name:'',
+        occupation:''
+    }])
+
+    useEffect(() => {
+        fetch("/users").then(res => {
+            if(res.ok) {
+                return res.json()
+            }
+        }).then(jsonRes => setUsers(jsonRes));
+    })
+
     return (
         <div>
             <HomeHeader></HomeHeader>
@@ -28,76 +42,31 @@ export default function EmployeeListings() {
                         </form>
                     </div>
                 </nav>
+
+
+
+
                 <div>
+                    
                     <div class="card-columns p-5">
                         <div className='row row-cols-1 row-cols-md-2 g-4'>
+                        {users.map(user =>
                             <div className='col'>
                                 <div class="card bg-iSolve text-light">
                                     <h5 class="card-header text-center">PROGRAMMER EXPERIENCE</h5>
                                     <img src={EmployeeTemplate} class="card-img card-image" alt="..." />
                                     <div class="card-body d-flex flex-column justify-content-around align-items-center">
-                                        <h5>NAME</h5>
-                                        <h5>JOB EXPERIENCE</h5>
+                                        <h5>{user.name}</h5>
+                                        <h5>{user.occupation}</h5>
                                         <button className='btn-lg btn-light' data-toggle="modal" data-target="#exampleModal">Details</button>
                                     </div>
                                 </div>
                             </div>
-                            <div className='col'>
-                                <div class="card bg-iSolve text-light">
-                                    <h5 class="card-header text-center">PROGRAMMER EXPERIENCE</h5>
-                                    <img src={EmployeeTemplate} class="card-img card-image" alt="..." />
-                                    <div class="card-body d-flex flex-column justify-content-around align-items-center">
-                                        <h5>NAME</h5>
-                                        <h5>JOB EXPERIENCE</h5>
-                                        <button className='btn-lg btn-light' data-toggle="modal" data-target="#exampleModal">Details</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='col'>
-                                <div class="card bg-iSolve text-light">
-                                    <h5 class="card-header text-center">PROGRAMMER EXPERIENCE</h5>
-                                    <img src={EmployeeTemplate} class="card-img card-image" alt="..." />
-                                    <div class="card-body d-flex flex-column justify-content-around align-items-center">
-                                        <h5>NAME</h5>
-                                        <h5>JOB EXPERIENCE</h5>
-                                        <button className='btn-lg btn-light' data-toggle="modal" data-target="#exampleModal">Details</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='col'>
-                                <div class="card bg-iSolve text-light">
-                                    <h5 class="card-header text-center">PROGRAMMER EXPERIENCE</h5>
-                                    <img src={EmployeeTemplate} class="card-img card-image" alt="..." />
-                                    <div class="card-body d-flex flex-column justify-content-around align-items-center">
-                                        <h5>NAME</h5>
-                                        <h5>JOB EXPERIENCE</h5>
-                                        <button className='btn-lg btn-light' data-toggle="modal" data-target="#exampleModal">Details</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='col'>
-                                <div class="card bg-iSolve text-light">
-                                    <h5 class="card-header text-center">PROGRAMMER EXPERIENCE</h5>
-                                    <img src={EmployeeTemplate} class="card-img card-image" alt="..." />
-                                    <div class="card-body d-flex flex-column justify-content-around align-items-center">
-                                        <h5>NAME</h5>
-                                        <h5>JOB EXPERIENCE</h5>
-                                        <button className='btn-lg btn-light' data-toggle="modal" data-target="#exampleModal">Details</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='col'>
-                                <div class="card bg-iSolve text-light">
-                                    <h5 class="card-header text-center">PROGRAMMER EXPERIENCE</h5>
-                                    <img src={EmployeeTemplate} class="card-img card-image" alt="..." />
-                                    <div class="card-body d-flex flex-column justify-content-around align-items-center">
-                                        <h5>NAME</h5>
-                                        <h5>JOB EXPERIENCE</h5>
-                                        <button className='btn-lg btn-light' data-toggle="modal" data-target="#exampleModal">Details</button>
-                                    </div>
-                                </div>
-                            </div>
+                            )}
                         </div>
+                    </div>
+                            
+                            
 
                         <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
@@ -153,6 +122,6 @@ export default function EmployeeListings() {
                     </div>
                 </div>
             </div>
-        </div>
+       
     )
 }

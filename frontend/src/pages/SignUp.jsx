@@ -1,9 +1,15 @@
 import React, { useState } from 'react'
 import axios from "axios";
+import Login from '../pages/Login'
+
+import {
+    BrowserRouter as Router,
+    useHistory,
+} from "react-router-dom";
 
 export default function SignUp() {
 
-    
+  
         const[input, setInput] = useState({
             email: '',
             password: '',
@@ -23,26 +29,31 @@ export default function SignUp() {
             }
         })
     }
+    const history = useHistory();
 
     function handleClick(event){ 
         
+        let path = `/login`
         
         event.preventDefault();
         const newComp = {
             email: input.email,
+            name: input.name,
             password: input.password,
             address: input.address,
-            birth: input.birth,
             occupation: input.occupation
         }
 
         //calls the server.js http
         axios.post('http://localhost:8082/create', newComp)
         console.log('pressed!')
+
+        history.push(path)
         
     }
     
     return (
+       
         <div>
             <div className='container p-5 mt-5 bg-iSolve text-light rounded'>
                 <form>
@@ -51,6 +62,12 @@ export default function SignUp() {
                         <label for="email">Email address</label>
                         <input  type="email" onChange={handleChange} class="form-control" name="email" value={input.email} id="email" aria-describedby="emailHelp" />
                         <small id="emailHelp" class="form-text">We'll never share your email with anyone else.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input  type="name" onChange={handleChange} class="form-control" name="name" value={input.name} id="name" aria-describedby="name" />
+                        <small id="emailHelp" class="form-text">If you're a company, please input your companies name.</small>
                     </div>
 
                     <div class="form-group">
@@ -104,12 +121,14 @@ export default function SignUp() {
                     </div>
 
                     <div className='d-flex justify-content-between align-items-center'>
-                        <button onClick={handleClick} type="submit" class="btn btn-primary">Sign Up</button>
+                        <button onClick={handleClick}  type="submit" class="btn btn-primary">Sign Up</button>
                         <a className='p-2 btn btn-secondary' href="/login">Already have an account Login here.</a>
                     </div>
                 </form>
             </div>
         </div>
+    
+        
     )
     
 }
