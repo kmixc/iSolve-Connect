@@ -1,6 +1,8 @@
 import React,{useState, useEffect} from 'react'
 import HomeHeader from '../components/HomeHeader'
 import EmployeeTemplate from '../img/employee-template.png'
+import jwt from 'jsonwebtoken'
+import { useHistory } from 'react-router-dom'
 
 export default function EmployeeListings() {
 
@@ -9,7 +11,34 @@ export default function EmployeeListings() {
         occupation:''
     }])
 
+    const history = useHistory()
+
+    async function populateQuote(){
+       const req = await fetch('/quote', {
+            headers: {
+                'x-access-token': localStorage.getItem('token'),
+            }
+       })
+
+       const data = req.json()
+       console.log(data)
+    }
+
     useEffect(() => {
+        const token = localStorage.getItem('token')
+        if(token){
+            const user = jwt.decode(token)
+            if(!user){
+                localStorage.removeItem('token')
+                history.replace('/login')
+            }
+        }else {
+            populateQuote()
+        }
+    })
+
+    useEffect(() => {
+        
         fetch("/users").then(res => {
             if(res.ok) {
                 return res.json()

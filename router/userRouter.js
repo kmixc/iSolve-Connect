@@ -2,7 +2,8 @@ const express = require('express');
 const User = require('../user')
 const app = express();
 const router = express.Router();
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
+//const { response } = require('express');
 
 //Register User
 router.route("/create").post((req,res) => {
@@ -42,14 +43,20 @@ router.route("/userLogin").post((req,res) => {
         email: req.body.email,
         password: req.body.password,
     }, function(err, result) {
-        const token = jwt.sign({
-            name: user.name,
-            email: user.email
-        }, 'secret')
-        res.json({status: 'ok', user: token})
-        if(!result){
-            console.log('false')
+        console.log(!!result)
+        console.log(!result)
+
+        if(!result){            
+            res.send(false)
+        }else{
+            const token = jwt.sign({
+                name: user.name,
+                email: user.email
+            }, 'secret')
+            
+            res.json({status: 'ok', user: token})
         }
+        
     })
 })
 

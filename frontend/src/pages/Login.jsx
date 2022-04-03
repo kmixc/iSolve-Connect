@@ -7,6 +7,7 @@ import {
     useHistory,
 } from "react-router-dom";
 
+
 export default function Login() {
 
     const[input, setInput] = useState({
@@ -29,6 +30,8 @@ const history = useHistory();
 
 function handleClick(event){ 
     
+    
+
     let path = `/about`
     
     event.preventDefault();
@@ -37,10 +40,10 @@ function handleClick(event){
         password: input.password,  
     }
 
-   
 
     //calls the server.js http
-    axios.post('http://localhost:8082/userLogin', userCheck)
+    axios.post('http://localhost:8082/userLogin', userCheck).then((response) => { localStorage.setItem('token',response.data.user)})
+    
     console.log('pressed!')
 
     history.push(path)
