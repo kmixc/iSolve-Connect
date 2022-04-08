@@ -35,6 +35,7 @@ export default function Navbar() {
                     <NavLink className="link" activeClassName="active-link" to='/profile'>Profile</NavLink>
                     <NavLink className="link signup" activeClassName="active-link" to='/signup'>Sign-Up</NavLink>
                     <NavLink className="link login" activeClassName="active-link" to='/login'>Login</NavLink>
+                    <button className="btn link" onClick>Logout</button>
                 </div>
             </nav>
 
