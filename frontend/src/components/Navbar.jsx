@@ -25,10 +25,11 @@ export default function Navbar() {
         <Router>
             <nav className='navbar'>
                 <div className='nav-left'>
-                    <NavLink className="link" activeClassName="active-link" to='/home'>Home</NavLink>
+                    <NavLink className="link hide" activeClassName="active-link" to='/home'>Home</NavLink>
                     <img className='nav-logo' src={Logo} alt="logo"></img>
                 </div>
                 <div className='nav-right'>
+                    <NavLink className="link unhide" activeClassName="active-link" to='/home'>Home</NavLink>
                     <NavLink className="link" activeClassName="active-link" to='/employeelist'>Employee Listings</NavLink>
                     <NavLink className="link" activeClassName="active-link" to='/companylist'>Company Listings</NavLink>
                     <NavLink className="link" activeClassName="active-link" to='/profile'>Profile</NavLink>
