@@ -1,21 +1,46 @@
 import React,{useState, useEffect} from 'react'
 import HomeHeader from '../components/HomeHeader'
 import CompanyTemplate from '../img/company-template.png'
+import jwt from 'jsonwebtoken'
+import { useHistory } from 'react-router-dom'
 
 export default function CompanyListings() {
+
+    const [count, setCount] = React.useState(0);
 
     const [company, setCompany] = useState([{
         name:'',
         occupation:''
     }])
 
+    const history = useHistory()
+
+
     useEffect(() => {
+        const token = localStorage.getItem('token')
+        console.log(token)
+        if(token){
+            const user = jwt.decode(token)
+            console.log(user)
+            if(!user){
+                localStorage.removeItem('token')
+                history.replace('/login')
+                console.log('user not logged')
+            }
+            else {
+                console.log('user found')
+            }
+        }else{
+            history.replace('/login')
+            console.log('user not logged')
+        }
         fetch("/company").then(res => {
             if(res.ok) {
                 return res.json()
             }
         }).then(jsonRes => setCompany(jsonRes));
-    })
+        setCount(1);
+    }, [])
 
     return (
         <div>
