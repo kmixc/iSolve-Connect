@@ -218,6 +218,10 @@ body {
   .nav-left {
     justify-content: center;
   }
+
+  .link {
+    padding: 5px 5px;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
