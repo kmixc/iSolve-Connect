@@ -26,6 +26,17 @@ export default function Navbar() {
 
     const history = useHistory()
 
+    function loginClick(event){
+        const token = localStorage.getItem('token')
+        console.log(token)
+        if(token){
+            const user = jwt.decode(token)
+            console.log(user)
+            alert('User is already logged in')
+            window.location.replace('/about')
+        }
+    }
+
     function handleClick(event){
         const token = localStorage.getItem('token')
         console.log(token)
@@ -53,7 +64,7 @@ export default function Navbar() {
                     <NavLink className="link" activeClassName="active-link" to='/companylist'>Company Listings</NavLink>
                     <NavLink className="link" activeClassName="active-link" to='/profile'>Profile</NavLink>
                     <NavLink className="link signup" activeClassName="active-link" to='/signup'>Sign-Up</NavLink>
-                    <NavLink className="link login" activeClassName="active-link" to='/login'>Login</NavLink>
+                    <NavLink className="link login" activeClassName="active-link" onClick={loginClick} to='/login'>Login</NavLink>
                     <NavLink className="btn link" to='/login'onClick={handleClick}>Logout</NavLink>
                 </div>
             </nav>
