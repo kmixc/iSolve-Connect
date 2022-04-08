@@ -42,7 +42,12 @@ function handleClick(event){
 
 
     //calls the server.js http
-    axios.post('http://localhost:8082/userLogin', userCheck).then((response) => { localStorage.setItem('token',response.data.user)})
+    axios.post('http://localhost:8082/userLogin', userCheck)
+    .then((response) => { 
+        if(response.data === false){
+            alert('Email address and Password do not match, please try again.')
+        }
+        localStorage.setItem('token',response.data.user)})
     
     console.log('pressed!')
 

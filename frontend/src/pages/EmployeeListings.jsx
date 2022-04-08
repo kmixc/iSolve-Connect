@@ -32,6 +32,7 @@ export default function EmployeeListings() {
             }
         }else{
             history.replace('/login')
+            alert('User not logged in')
             console.log('user not logged')
         }
         fetch("/users").then(res => {
