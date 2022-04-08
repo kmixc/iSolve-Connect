@@ -1,21 +1,47 @@
 import React,{useState, useEffect} from 'react'
 import HomeHeader from '../components/HomeHeader'
 import EmployeeTemplate from '../img/employee-template.png'
+import jwt from 'jsonwebtoken'
+import { useHistory } from 'react-router-dom'
 
 export default function EmployeeListings() {
+
+    const [count, setCount] = React.useState(0);
 
     const [users, setUsers] = useState([{
         name:'',
         occupation:''
     }])
 
+    const history = useHistory()
+
+
     useEffect(() => {
+        const token = localStorage.getItem('token')
+        console.log(token)
+        if(token){
+            const user = jwt.decode(token)
+            console.log(user)
+            if(!user){
+                localStorage.removeItem('token')
+                history.replace('/login')
+                console.log('user not logged')
+            }
+            else {
+                console.log('user found')
+            }
+        }else{
+            history.replace('/login')
+            console.log('user not logged')
+        }
         fetch("/users").then(res => {
             if(res.ok) {
                 return res.json()
             }
         }).then(jsonRes => setUsers(jsonRes));
-    })
+
+        setCount(1);
+    },[])
 
     return (
         <div>

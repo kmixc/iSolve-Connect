@@ -1,7 +1,36 @@
-import React from 'react'
+import React,{useState, useEffect}  from 'react'
 import User from '../img/UserIcon-white.png'
+import jwt from 'jsonwebtoken'
+import { useHistory } from 'react-router-dom'
 
 export default function Profile() {
+
+    const [count, setCount] = React.useState(0);
+
+
+    const history = useHistory()
+
+
+    useEffect(() => {
+        const token = localStorage.getItem('token')
+        console.log(token)
+        if(token){
+            const user = jwt.decode(token)
+            console.log(user)
+            if(!user){
+                localStorage.removeItem('token')
+                history.replace('/login')
+                console.log('user not logged')
+            }
+            else {
+                console.log('user found')
+            }
+        }else{
+            history.replace('/login')
+            console.log('user not logged')
+        }
+        setCount(1);
+    }, [])
     return (
         <div className='profile'>
             <div className='container bg-iSolve my-5 text-light'>
