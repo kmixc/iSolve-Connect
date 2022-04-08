@@ -6,6 +6,8 @@ import { useHistory } from 'react-router-dom'
 
 export default function EmployeeListings() {
 
+    const [count, setCount] = React.useState(0);
+
     const [users, setUsers] = useState([{
         name:'',
         occupation:''
@@ -13,38 +15,33 @@ export default function EmployeeListings() {
 
     const history = useHistory()
 
-    async function populateQuote(){
-       const req = await fetch('/quote', {
-            headers: {
-                'x-access-token': localStorage.getItem('token'),
-            }
-       })
-
-       const data = req.json()
-       console.log(data)
-    }
 
     useEffect(() => {
         const token = localStorage.getItem('token')
+        console.log(token)
         if(token){
             const user = jwt.decode(token)
+            console.log(user)
             if(!user){
                 localStorage.removeItem('token')
                 history.replace('/login')
+                console.log('user not logged')
             }
-        }else {
-            populateQuote()
+            else {
+                console.log('user found')
+            }
+        }else{
+            history.replace('/login')
+            console.log('user not logged')
         }
-    })
-
-    useEffect(() => {
-        
         fetch("/users").then(res => {
             if(res.ok) {
                 return res.json()
             }
         }).then(jsonRes => setUsers(jsonRes));
-    })
+
+        setCount(1);
+    },[])
 
     return (
         <div>

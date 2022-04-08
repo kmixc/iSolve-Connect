@@ -27,7 +27,7 @@ router.route("/create").post((req,res) => {
 //List out Programmers
 router.route("/users").get((req,res) => {
     User.find({occupation: 'I am Programmer'})
-        .then(foundUser => res.json(foundUser))
+    .then(foundUser => res.json(foundUser))
 })
 
 //List out Companies
@@ -53,11 +53,16 @@ router.route("/userLogin").post((req,res) => {
                 name: user.name,
                 email: user.email
             }, 'secret')
-            
             res.json({status: 'ok', user: token})
         }
         
     })
+    
+})
+
+router.route("/").get((req,res) => {
+
+    
 })
 
 
