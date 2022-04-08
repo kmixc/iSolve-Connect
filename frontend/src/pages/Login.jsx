@@ -29,9 +29,6 @@ function handleChange(event){
 const history = useHistory();
 
 function handleClick(event){ 
-    
-    
-
     let path = `/about`
     
     event.preventDefault();

@@ -10,6 +10,8 @@ import About from '../pages/About'
 import Examples from '../pages/Examples'
 import Login from '../pages/Login'
 import SignUp from '../pages/SignUp'
+import jwt from 'jsonwebtoken'
+import { useHistory } from 'react-router-dom'
 
 import {
     BrowserRouter as Router,
@@ -21,6 +23,23 @@ import {
 
 
 export default function Navbar() {
+
+    const history = useHistory()
+
+    function handleClick(event){
+        const token = localStorage.getItem('token')
+        console.log(token)
+        if(token){
+            const user = jwt.decode(token)
+            console.log(user)
+            alert('User is logged out')
+            localStorage.removeItem('token')
+        }else{
+            alert('User is logged in')
+        }
+    }
+    
+
     return (
         <Router>
             <nav className='navbar'>
@@ -35,7 +54,7 @@ export default function Navbar() {
                     <NavLink className="link" activeClassName="active-link" to='/profile'>Profile</NavLink>
                     <NavLink className="link signup" activeClassName="active-link" to='/signup'>Sign-Up</NavLink>
                     <NavLink className="link login" activeClassName="active-link" to='/login'>Login</NavLink>
-                    <button className="btn link" onClick>Logout</button>
+                    <NavLink className="btn link" to='/login'onClick={handleClick}>Logout</NavLink>
                 </div>
             </nav>
 
